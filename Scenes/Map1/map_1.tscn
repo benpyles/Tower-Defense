@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dqlfxbjh20k5a" path="res://Assets/kenney_top-down-tanks-remastered/Tilesheet/terrainTiles_default.png" id="1_dcmhf"]
 [ext_resource type="Script" uid="uid://b8fulxtahkdan" path="res://Scenes/Map1/map_1.gd" id="1_k5iew"]
 [ext_resource type="Script" uid="uid://ce2mqxmlusi7s" path="res://Scenes/Map1/path_follow_2d.gd" id="2_pj5k7"]
+[ext_resource type="PackedScene" uid="uid://cyodl3moy38u8" path="res://Towers/Tank.tscn" id="4_4smgf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gt30j"]
 texture = ExtResource("1_dcmhf")
@@ -306,5 +307,8 @@ zoom = Vector2(0.75, 0.75)
 
 [node name="Timer" type="Timer" parent="." unique_id=1987881149]
 autostart = true
+
+[node name="Tank_tscn2" parent="." unique_id=1435423516 instance=ExtResource("4_4smgf")]
+position = Vector2(-307, -261)
 
 [connection signal="timeout" from="Timer" to="." method="_on_spawn_timer_timeout"]

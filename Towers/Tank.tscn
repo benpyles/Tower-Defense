@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cyodl3moy38u8"]
+
+[ext_resource type="Texture2D" uid="uid://bd8muy75lqcda" path="res://Assets/kenney_top-down-tanks-remastered/PNG/Default size/tankBody_bigRed.png" id="1_5sgcy"]
+[ext_resource type="Script" uid="uid://btdxb1cihprnx" path="res://Towers/tank.gd" id="1_h3kg1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h3kg1"]
+radius = 150.0
+
+[node name="Tank_tscn" type="Area2D" unique_id=1435423516]
+script = ExtResource("1_h3kg1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2137971510]
+texture = ExtResource("1_5sgcy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1779982055]
+shape = SubResource("CircleShape2D_h3kg1")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

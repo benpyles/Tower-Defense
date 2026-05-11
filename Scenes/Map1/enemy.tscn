@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://ce2mqxmlusi7s" path="res://Scenes/Map1/path_follow_2d.gd" id="1_cnkcm"]
 [ext_resource type="Texture2D" uid="uid://bwxlknghdumvr" path="res://Assets/kenney_top-down-tanks-remastered/PNG/Default size/barrelBlack_top.png" id="1_hghv2"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cnkcm"]
+radius = 13.0
+
 [node name="Enemy" type="PathFollow2D" unique_id=1405879298]
 z_index = 1
 rotation = 1.5792413
@@ -11,3 +14,8 @@ script = ExtResource("1_cnkcm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=279257915]
 texture = ExtResource("1_hghv2")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=948131177]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1015060406]
+shape = SubResource("CircleShape2D_cnkcm")
