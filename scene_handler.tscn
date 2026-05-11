@@ -1,6 +1,22 @@
 [gd_scene format=3 uid="uid://c2ahvm5ec8kqk"]
 
 [ext_resource type="Script" uid="uid://c6a4rp8dcsmaa" path="res://scene_handler.gd" id="1_8qim7"]
+[ext_resource type="Script" uid="uid://cn41o1xfaakfc" path="res://gold_label.gd" id="2_sy2fw"]
+[ext_resource type="Script" uid="uid://dhtu75gkvsdma" path="res://lives_label.gd" id="3_qjdn2"]
 
-[node name="SceneHandler" type="Node" unique_id=833619014]
+[node name="SceneHandler" type="Node2D" unique_id=710864952]
 script = ExtResource("1_8qim7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1149760843]
+
+[node name="Gold Label" type="Label" parent="CanvasLayer" unique_id=1095424098]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Gold"
+script = ExtResource("2_sy2fw")
+
+[node name="LivesLabel" type="Label" parent="CanvasLayer" unique_id=2134935401]
+offset_top = 21.0
+offset_right = 40.0
+offset_bottom = 44.0
+script = ExtResource("3_qjdn2")

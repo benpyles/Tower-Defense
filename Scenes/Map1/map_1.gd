@@ -1,7 +1,7 @@
 extends Node2D
 
 # Load the enemy blueprint into memory before the game starts
-var enemy_scene: PackedScene = preload("res://Scenes/Map1/enemy.tscn")
+var enemy_scene: PackedScene = preload("res://Enemys/enemy.tscn")
 
 # This function runs every time the SpawnTimer reaches 0
 func _on_spawn_timer_timeout() -> void:

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://5qbn8urh1fwe"]
+
+[ext_resource type="Script" uid="uid://df6v3qnqhwg26" path="res://Towers/Tank/bullet.gd" id="1_unuy4"]
+[ext_resource type="Texture2D" uid="uid://i84cbuxpg744" path="res://Assets/kenney_top-down-tanks-remastered/PNG/Default size/bulletRed3_outline.png" id="2_mbcif"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qtl0"]
+size = Vector2(8, 18)
+
+[node name="Bullet" type="Area2D" unique_id=1481143690]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_unuy4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1170270715]
+rotation = 1.5707964
+texture = ExtResource("2_mbcif")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=562985431]
+z_index = 3
+shape = SubResource("RectangleShape2D_4qtl0")

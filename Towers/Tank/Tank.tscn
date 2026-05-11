@@ -7,6 +7,7 @@
 radius = 150.0
 
 [node name="Tank_tscn" type="Area2D" unique_id=1435423516]
+collision_mask = 2
 script = ExtResource("1_h3kg1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2137971510]
@@ -18,7 +19,3 @@ shape = SubResource("CircleShape2D_h3kg1")
 [node name="ShootTimer" type="Timer" parent="." unique_id=1320692604]
 wait_time = 0.75
 autostart = true
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_area_exited"]
-[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

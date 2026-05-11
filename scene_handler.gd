@@ -1,26 +1,45 @@
-extends Node
+extends Node2D
 
 # This variable keeps track of whatever map or menu is currently loaded
 var current_scene: Node = null
+var tank_scene: PackedScene = preload("res://Towers/Tank/Tank.tscn")
 
 func _ready() -> void:
-	# Let's load your first map right when the game starts!
-	# Make sure this path matches the exact name of your map scene.
 	load_scene("res://Scenes/Map1/map_1.tscn")
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if GameManager.gold >= GameManager.tank_price:
+			# This works now because we are extending Node2D again
+			var mouse_pos = get_global_mouse_position()
+			spawn_tank(mouse_pos)
+		else:
+			print("Too poor!")
+
+func spawn_tank(location: Vector2) -> void:
+	if current_scene == null:
+		return
+	
+	# Spend gold
+	GameManager.spend_gold(GameManager.tank_price)
+	
+	# Create the tank
+	var new_tank = tank_scene.instantiate()
+	
+	# Add the tank to the map so it moves with the map
+	current_scene.add_child(new_tank)
+	
+	# Set position
+	new_tank.global_position = location
 
 func load_scene(scene_path: String) -> void:
-	# Step 1: Clean up the old scene if one is already loaded
 	if current_scene != null:
 		current_scene.queue_free()
 
-	# Step 2: Load the new scene from your project files
 	var packed_scene: PackedScene = load(scene_path)
 	
 	if packed_scene:
-		# Step 3: Create a physical instance of that loaded scene
 		current_scene = packed_scene.instantiate()
-		
-		# Step 4: Add it to the Scene Handler so it appears in the game
 		add_child(current_scene)
 	else:
 		print("Error: Could not load scene at path: ", scene_path)
