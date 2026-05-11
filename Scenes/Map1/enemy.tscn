@@ -6,6 +6,7 @@
 [node name="Enemy" type="PathFollow2D" unique_id=1405879298]
 z_index = 1
 rotation = 1.5792413
+loop = false
 script = ExtResource("1_cnkcm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=279257915]
