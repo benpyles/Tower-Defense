@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ce2mqxmlusi7s" path="res://Enemys/path_follow_2d.gd" id="1_cnkcm"]
 [ext_resource type="Texture2D" uid="uid://bwxlknghdumvr" path="res://Assets/kenney_top-down-tanks-remastered/PNG/Default size/barrelBlack_top.png" id="1_hghv2"]
+[ext_resource type="Texture2D" uid="uid://6gtisjiyc02b" path="res://Enemys/healthbarUnder.png" id="3_h0rhf"]
+[ext_resource type="Texture2D" uid="uid://csacvovewf72t" path="res://Enemys/healthbarProgress.png" id="4_ddrbr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cnkcm"]
 radius = 13.0
@@ -12,7 +14,7 @@ rotation = 1.5792413
 loop = false
 script = ExtResource("1_cnkcm")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=279257915]
+[node name="Enemy" type="Sprite2D" parent="." unique_id=279257915]
 texture = ExtResource("1_hghv2")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=948131177]
@@ -20,3 +22,13 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1015060406]
 shape = SubResource("CircleShape2D_cnkcm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1707617328]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1834107632]
+offset_left = -31.762402
+offset_top = 28.269236
+offset_right = 32.2376
+offset_bottom = 68.26923
+texture_under = ExtResource("3_h0rhf")
+texture_progress = ExtResource("4_ddrbr")
