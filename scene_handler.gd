@@ -6,7 +6,7 @@ var current_scene: Node = null
 func _ready() -> void:
 	# Let's load your first map right when the game starts!
 	# Make sure this path matches the exact name of your map scene.
-	load_scene("res://Scenes/map_1.tscn")
+	load_scene("res://Scenes/Map1/map_1.tscn")
 
 func load_scene(scene_path: String) -> void:
 	# Step 1: Clean up the old scene if one is already loaded

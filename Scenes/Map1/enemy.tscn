@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://caljsike07l14"]
+
+[ext_resource type="Script" uid="uid://ce2mqxmlusi7s" path="res://Scenes/Map1/path_follow_2d.gd" id="1_cnkcm"]
+[ext_resource type="Texture2D" uid="uid://bwxlknghdumvr" path="res://Assets/kenney_top-down-tanks-remastered/PNG/Default size/barrelBlack_top.png" id="1_hghv2"]
+
+[node name="Enemy" type="PathFollow2D" unique_id=1405879298]
+z_index = 1
+rotation = 1.5792413
+script = ExtResource("1_cnkcm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=279257915]
+texture = ExtResource("1_hghv2")
