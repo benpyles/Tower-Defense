@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cyodl3moy38u8"]
 
 [ext_resource type="Texture2D" uid="uid://bd8muy75lqcda" path="res://Assets/kenney_top-down-tanks-remastered/PNG/Default size/tankBody_bigRed.png" id="1_5sgcy"]
-[ext_resource type="Script" uid="uid://btdxb1cihprnx" path="res://Towers/tank.gd" id="1_h3kg1"]
+[ext_resource type="Script" uid="uid://btdxb1cihprnx" path="res://Towers/Tank/tank.gd" id="1_h3kg1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h3kg1"]
 radius = 150.0
@@ -15,4 +15,10 @@ texture = ExtResource("1_5sgcy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1779982055]
 shape = SubResource("CircleShape2D_h3kg1")
 
+[node name="ShootTimer" type="Timer" parent="." unique_id=1320692604]
+wait_time = 0.75
+autostart = true
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
